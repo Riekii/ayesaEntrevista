@@ -1,0 +1,13 @@
+.userLine{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 0;
+    
+
+    .name{
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+}

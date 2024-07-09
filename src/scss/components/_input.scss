@@ -1,0 +1,19 @@
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 1vw;
+    width: 100%;
+
+    &.select{
+        justify-content: flex-end;
+        select{
+            width: 90%;
+            padding: 7px 10px;
+            border: rgb(214, 214, 214) 1px solid;
+            border-radius: 5px;
+        }
+    }
+
+}
