@@ -1,0 +1,71 @@
+<div class="fullScreen">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <form [formGroup]="userForm">
+                    <form formGroupName="personal_data">
+                        <div class="d-flex flex-row justify-content-around">
+                            <div class="inputContainer">
+                                <label for="name">Nombre</label>
+                                <input type="text" formControlName="name" class="form-control" id="name">
+                                <small *ngIf="!this.userForm?.valid && this.userForm.get('name')?.invalid">Falta el
+                                    nombre</small>
+                            </div>
+                            <div class="inputContainer">
+                                <label for="name">Apellido 1</label>
+                                <input type="text" formControlName="first_surname" class="form-control"
+                                    id="first_surname">
+                                <small
+                                    *ngIf="!this.userForm?.valid && this.userForm.get('first_surname')?.invalid">Falta
+                                    el apellido</small>
+                            </div>
+                            <div class="inputContainer">
+                                <label for="name">Apellido 2</label>
+                                <input type="text" formControlName="second_surname" class="form-control"
+                                    id="second_surname">
+                                <small
+                                    *ngIf="!this.userForm?.valid && this.userForm.get('second_surname')?.invalid">Falta
+                                    el segundo apellido</small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-around">
+                            <div class="inputContainer">
+                                <label for="gender">NIF</label>
+                                <input type="text" formControlName="nif" class="form-control" id="second_surname">
+                                <small *ngIf="!this.userForm?.valid && this.userForm.get('nif')?.invalid">Falta el
+                                    NIF</small>
+                            </div>
+                            <div class="inputContainer select">
+                                <label for="gender">Género</label>
+                                <select (change)="selectGender($event)" id="gender">
+                                    <option selected value="empleado">Hombre</option>
+                                    <option value="demandante">Mujer</option>
+                                    <option value="demandante">Otro</option>
+                                </select>
+                                <small *ngIf="!this.userForm?.valid && this.userForm.get('gender')?.invalid">Falta el
+                                    género</small>
+                            </div> 
+                            <div class="inputContainer">
+                                <label for="name">Nacimiento</label>
+                                <input type="text" formControlName="birth_date" class="form-control"
+                                    id="second_surname">
+                                <small *ngIf="!this.userForm?.valid && this.userForm.get('birth_date')?.invalid">Falta
+                                    el segundo apellido</small>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between flex-row">
+                            <button type="button" (click)="this.router.navigate(['user-list'])" class="" class="btn btn-warning">Atrás</button>
+                            <button type="submit" class="" class="btn btn-success">Enviar</button>
+
+                        </div>
+                    </form>
+
+                    <!-- <form formArrayName="studies">
+                        <div class="study" *ngFor="let study of []; let index as i"></div>
+                    </form>
+                    <form formArrayName="work_experience"></form> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

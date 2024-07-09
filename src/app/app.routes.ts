@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
-import { UserListComponent } from './component/user-list/user-list.component';
-import { UserDetailComponent } from './component/user-list/user-detail/user-detail.component';
-import { UserModComponent } from './component/user-list/user-mod/user-mod.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserDetailComponent } from './components/user-list/user-detail/user-detail.component';
+import { UserModComponent } from './components/user-list/user-mod/user-mod.component';
 import { NgModule } from '@angular/core';
 
 export const routes: Routes = [

@@ -1,0 +1,24 @@
+<div class="fullScreen">
+    <div class="container-fluid">
+        <!-- SELECT Y AÑADIR USUARIO -->
+        <div class="row">
+            <div class="col-12 d-flex flex-row-reverse gap-2">
+                <button type="button" class="btn btn-success" (click)="newUser()">Añadir usuario</button>
+                
+                <select class="select" (change)="filter($event)">
+                    <option selected value="">Todos</option>
+                    <option value="empleado">Empleados</option>
+                    <option value="demandante">Demandantes</option>
+                  </select>
+            </div>
+        </div>
+
+        <!-- LISTADO DE USUARIOS -->
+ 
+        <div class="row">
+            <!-- @for(let user in u) -->
+                <app-user-line *ngFor="let user of users" [user]="user"></app-user-line>
+        </div>
+    </div>
+    
+</div>
