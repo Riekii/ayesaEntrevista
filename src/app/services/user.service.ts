@@ -11,9 +11,17 @@ export class UserService {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.getUsersLocal();
+  }
 
   // NO CONSEGUÍ RECOGER UN JSON EN ASSETS DESDE UNA PETICIÓN GET, ES ALGO QUE NUNCA TUVE QUE HACER Y DABA FALLOS POR TODAS PARTES
+  getUsersLocal(){
+    this.http.get("../../../assets/users.json").subscribe((data: any) => {
+      this.users = data;
+    });
+  }
+
   getUsers(){
     return this.http.get("../../../assets/users.json");
   }
