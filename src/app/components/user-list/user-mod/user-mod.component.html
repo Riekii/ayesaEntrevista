@@ -38,9 +38,9 @@
                             <div class="inputContainer select">
                                 <label for="gender">Género</label>
                                 <select (change)="selectGender($event)" id="gender">
-                                    <option selected value="empleado">Hombre</option>
-                                    <option value="demandante">Mujer</option>
-                                    <option value="demandante">Otro</option>
+                                    <option selected value="hombre">Hombre</option>
+                                    <option value="mujer">Mujer</option>
+                                    <option value="otro">Otro</option>
                                 </select>
                                 <small *ngIf="!this.userForm?.valid && !this.userForm.get('personal_data')?.get('gender')?.valid">Falta el
                                     género</small>

@@ -57,7 +57,7 @@ export class UserModComponent implements OnInit{
       name: new FormControl('', Validators.required),
       first_surname: new FormControl('', Validators.required),
       second_surname: new FormControl(''),
-      gender: new FormControl('', Validators.required),
+      gender: new FormControl('hombre', Validators.required),
       birth_date: new FormControl('', Validators.required)
     }),
     studies: new FormArray([
@@ -94,8 +94,8 @@ export class UserModComponent implements OnInit{
   
 
   public selectGender(event: any){
-    if(event.detail){
-      this.userForm.get('personal_data')?.get('gender')?.setValue(event.detail.value)
+    if (event.target.value){
+      this.userForm.get('personal_data')?.get('gender')?.setValue(event.target.value)
     }
     else{
       this.userForm.get('personal_data')?.get('gender')?.setValue('')
