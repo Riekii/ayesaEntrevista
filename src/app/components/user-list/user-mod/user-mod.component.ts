@@ -41,7 +41,12 @@ export class UserModComponent implements OnInit{
   }
 
   submit(){
-    console.log(this.userForm.value)
+    if(this.userForm.valid){
+      let val: any = this.userForm.value;
+      this.userService.updateUser(val)
+      this.router.navigate(['user-list'])
+    }
+
   }
 
   public userForm = new FormGroup({
@@ -52,8 +57,8 @@ export class UserModComponent implements OnInit{
       name: new FormControl('', Validators.required),
       first_surname: new FormControl('', Validators.required),
       second_surname: new FormControl(''),
-      gender: new FormControl(''),
-      birth_date: new FormControl('')
+      gender: new FormControl('', Validators.required),
+      birth_date: new FormControl('', Validators.required)
     }),
     studies: new FormArray([
       this.getStudy()
@@ -65,17 +70,17 @@ export class UserModComponent implements OnInit{
 
   public getStudy(){
     return new FormGroup({
-      institution_name: new FormControl('', Validators.required),
-      date: new FormControl('', Validators.required),
-      degree: new FormControl('', Validators.required),
+      institution_name: new FormControl(''),
+      date: new FormControl(''),
+      degree: new FormControl(''),
     })
   };
 
   public getWork(){
     return new FormGroup({
-      company_name: new FormControl('', Validators.required),
-      job_position: new FormControl('', Validators.required),
-      date: new FormControl('', Validators.required),
+      company_name: new FormControl(''),
+      job_position: new FormControl(''),
+      date: new FormControl(''),
     })
   }
 

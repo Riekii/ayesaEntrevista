@@ -1,13 +1,18 @@
 .inputContainer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 1vh 1vw;
     width: 100%;
+    min-height: 120px;
+
+    small{
+        color: red;
+    }
 
     &.select{
-        justify-content: flex-end;
+        // justify-content: flex-end;
         select{
             width: 90%;
             padding: 7px 10px;

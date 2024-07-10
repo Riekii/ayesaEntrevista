@@ -17,7 +17,6 @@ export class UserService {
     this.getUsersLocal();
   }
 
-  // NO CONSEGUÍ RECOGER UN JSON EN ASSETS DESDE UNA PETICIÓN GET, ES ALGO QUE NUNCA TUVE QUE HACER Y DABA FALLOS POR TODAS PARTES
   getUsersLocal(){
     this.http.get<User[]>("../../../assets/users.json").subscribe((data: User[]) => {
       this.usersSubject.next(data);

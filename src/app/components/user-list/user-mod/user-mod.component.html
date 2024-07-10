@@ -8,7 +8,7 @@
                             <div class="inputContainer">
                                 <label for="name">Nombre</label>
                                 <input type="text" formControlName="name" class="form-control" id="name">
-                                <small *ngIf="!this.userForm?.valid && this.userForm.get('name')?.invalid">Falta el
+                                <small *ngIf="!this.userForm?.valid && !this.userForm.get('personal_data')?.get('name')?.valid">Falta el
                                     nombre</small>
                             </div>
                             <div class="inputContainer">
@@ -16,7 +16,7 @@
                                 <input type="text" formControlName="first_surname" class="form-control"
                                     id="first_surname">
                                 <small
-                                    *ngIf="!this.userForm?.valid && this.userForm.get('first_surname')?.invalid">Falta
+                                    *ngIf="!this.userForm?.valid && !this.userForm.get('personal_data')?.get('first_surname')?.valid">Falta
                                     el apellido</small>
                             </div>
                             <div class="inputContainer">
@@ -24,7 +24,7 @@
                                 <input type="text" formControlName="second_surname" class="form-control"
                                     id="second_surname">
                                 <small
-                                    *ngIf="!this.userForm?.valid && this.userForm.get('second_surname')?.invalid">Falta
+                                    *ngIf="!this.userForm?.valid && !this.userForm.get('personal_data')?.get('second_surname')?.valid">Falta
                                     el segundo apellido</small>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                             <div class="inputContainer">
                                 <label for="gender">NIF</label>
                                 <input type="text" formControlName="nif" class="form-control" id="second_surname">
-                                <small *ngIf="!this.userForm?.valid && this.userForm.get('nif')?.invalid">Falta el
+                                <small *ngIf="!this.userForm?.valid && !this.userForm.get('personal_data')?.get('nif')?.valid">Falta el
                                     NIF</small>
                             </div>
                             <div class="inputContainer select">
@@ -42,15 +42,14 @@
                                     <option value="demandante">Mujer</option>
                                     <option value="demandante">Otro</option>
                                 </select>
-                                <small *ngIf="!this.userForm?.valid && this.userForm.get('gender')?.invalid">Falta el
+                                <small *ngIf="!this.userForm?.valid && !this.userForm.get('personal_data')?.get('gender')?.valid">Falta el
                                     género</small>
                             </div> 
                             <div class="inputContainer">
                                 <label for="name">Nacimiento</label>
                                 <input type="text" formControlName="birth_date" class="form-control"
                                     id="second_surname">
-                                <small *ngIf="!this.userForm?.valid && this.userForm.get('birth_date')?.invalid">Falta
-                                    el segundo apellido</small>
+                                <small *ngIf="!this.userForm?.valid && !this.userForm.get('personal_data')?.get('birth_date')?.valid">Falta la fecha de nacimiento</small>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between flex-row">
@@ -59,11 +58,6 @@
 
                         </div>
                     </ng-container>
-
-                    <!-- <form formArrayName="studies">
-                        <div class="study" *ngFor="let study of []; let index as i"></div>
-                    </form>
-                    <form formArrayName="work_experience"></form> -->
                 </form>
             </div>
         </div>
