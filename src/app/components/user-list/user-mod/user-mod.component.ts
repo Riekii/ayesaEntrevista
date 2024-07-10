@@ -28,6 +28,22 @@ export class UserModComponent implements OnInit{
     });
   }
 
+  ngOnInit(): void {
+    if (this.userNif && this.userNif != "new") {
+      this.user = this.userService.getOneUser(this.userNif)[0];
+      let userToPath = this.user as any;
+      this.userForm?.patchValue(userToPath);
+    }
+    else {
+      this.studiesFormArray.push(this.getStudy());
+      this.workFormArray.push(this.getWork());
+    }
+  }
+
+  submit(){
+    console.log(this.userForm.value)
+  }
+
   public userForm = new FormGroup({
     type: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
@@ -81,16 +97,5 @@ export class UserModComponent implements OnInit{
     }
   }
 
-  ngOnInit(): void {
-    if(this.userNif && this.userNif != "new"){
-      this.user = this.userService.getOneUser(this.userNif)[0];
-      let userToPath = this.user as any;
-      this.userForm?.patchValue(userToPath);
-    }
-    else{
-      this.studiesFormArray.push(this.getStudy());
-      this.workFormArray.push(this.getWork());
-    }
 
-  }
 }

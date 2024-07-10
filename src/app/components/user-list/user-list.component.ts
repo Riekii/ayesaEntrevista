@@ -24,11 +24,10 @@ export class UserListComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.usersOrigin = this.userService.getUsersNoGet();
-    this.userService.getUsers().subscribe((data: any) => {
-      this.usersOrigin = data;
-    this.users = this.usersOrigin;
-    })
+    this.userService.users$.subscribe(users => {
+      this.users = users;
+      this.usersOrigin = this.users;
+    });
   }
 
   // FILTRADO

@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <form [formGroup]="userForm">
-                    <form formGroupName="personal_data">
+                <form [formGroup]="userForm" (ngSubmit)="submit()">
+                    <ng-container formGroupName="personal_data">
                         <div class="d-flex flex-row justify-content-around">
                             <div class="inputContainer">
                                 <label for="name">Nombre</label>
@@ -58,7 +58,7 @@
                             <button type="submit" class="" class="btn btn-success">Enviar</button>
 
                         </div>
-                    </form>
+                    </ng-container>
 
                     <!-- <form formArrayName="studies">
                         <div class="study" *ngFor="let study of []; let index as i"></div>

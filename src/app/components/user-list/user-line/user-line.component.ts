@@ -31,6 +31,6 @@ export class UserLineComponent implements OnInit {
   }
 
   delUser(){
-    this.userService.delUser(this.user.personal_data.nif);
+    this.userService.removeUser(this.user.personal_data.nif);
   }
 }
